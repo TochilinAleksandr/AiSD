@@ -1,0 +1,7 @@
+﻿  lr2.cpp
+  sortings.cpp
+C:\Users\kirmo\Desktop\учеба\не свое\АиСд\lr2\lr2\lr2\sortings.cpp(63,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\kirmo\Desktop\учеба\не свое\АиСд\lr2\lr2\lr2\sortings.cpp(157,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\kirmo\Desktop\учеба\не свое\АиСд\lr2\lr2\lr2\sortings.cpp(253,37): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
+  Создание кода...
+  lr2.vcxproj -> C:\Users\kirmo\Desktop\учеба\не свое\АиСд\lr2\lr2\Debug\lr2.exe
