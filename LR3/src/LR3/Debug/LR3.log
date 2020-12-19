@@ -1,0 +1,3 @@
+﻿  Heap.cpp
+C:\Users\kirmo\source\repos\LR3\LR3\Heap.cpp(90,6): warning C4101: temp: неиспользованная локальная переменная
+  LR3.vcxproj -> C:\Users\kirmo\source\repos\LR3\Debug\LR3.exe
