@@ -1,0 +1,9 @@
+﻿  CW.cpp
+  Calculator.cpp
+C:\Users\kirmo\source\repos\CW\CW\Calculator.cpp(134,25): warning C4101: e: неиспользованная локальная переменная
+C:\Users\kirmo\source\repos\CW\CW\Calculator.cpp(192,38): warning C4101: error: неиспользованная локальная переменная
+C:\Users\kirmo\source\repos\CW\CW\Calculator.cpp(224,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\kirmo\source\repos\CW\CW\Calculator.cpp(409,25): warning C4101: e: неиспользованная локальная переменная
+  Создание кода...
+C:\Users\kirmo\source\repos\CW\CW\Calculator.cpp(364): warning C4715: Calculator::doBinarOperator: значение возвращается не при всех путях выполнения
+  CW.vcxproj -> C:\Users\kirmo\source\repos\CW\Debug\CW.exe
