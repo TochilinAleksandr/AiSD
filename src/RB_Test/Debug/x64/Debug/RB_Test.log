@@ -1,0 +1,15 @@
+﻿  RB_Test.cpp
+C:\Users\kiril\Desktop\учеба\не свое\Точилин АиСД 2.0 ЛР 1\src\RB\RB.cpp(581,32): warning C4101: u: неиспользованная локальная переменная
+C:\Users\kiril\Desktop\учеба\не свое\Точилин АиСД 2.0 ЛР 1\src\RB\RB.cpp(574): message : во время компиляции функции-члена класс шаблон "void Map<int,std::string>::remove(T1)"
+          with
+          [
+              T1=int
+          ]
+C:\Users\kiril\Desktop\учеба\не свое\Точилин АиСД 2.0 ЛР 1\src\RB_Test\RB_Test.cpp(43): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Map<int,std::string>::remove(T1)"
+          with
+          [
+              T1=int
+          ]
+C:\Users\kiril\Desktop\учеба\не свое\Точилин АиСД 2.0 ЛР 1\src\RB_Test\RB_Test.cpp(18): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Map<int,std::string>"
+     Создается библиотека C:\Users\kiril\Desktop\учеба\не свое\Точилин АиСД 2.0 ЛР 1\src\x64\Debug\RB_Test.lib и объект C:\Users\kiril\Desktop\учеба\не свое\Точилин АиСД 2.0 ЛР 1\src\x64\Debug\RB_Test.exp
+  RB_Test.vcxproj -> C:\Users\kiril\Desktop\учеба\не свое\Точилин АиСД 2.0 ЛР 1\src\x64\Debug\RB_Test.dll
