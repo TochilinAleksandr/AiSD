@@ -26,7 +26,7 @@ template<typename T> void List<T>::push_with_count(T obj, int count)
 	Size++;
 }
 
-template<typename T> void List<T>::push_back(T obj) { // добавление в конец списка bc
+template<typename T> void List<T>::push_back(T obj) { // add to back of list
 	if (head != NULL) {
 		this->tail->Next = new Node(obj);
 		tail = tail->Next;
@@ -37,7 +37,7 @@ template<typename T> void List<T>::push_back(T obj) { // добавление в конец спис
 	}
 	Size++;
 }
-template<typename T> void List<T>::push_front(T obj) { // добавление в начало списка bc
+template<typename T> void List<T>::push_front(T obj) { // add to head of list
 	if (head != NULL) {
 		Node* current = new Node;
 		current->data = obj;
@@ -49,10 +49,10 @@ template<typename T> void List<T>::push_front(T obj) { // добавление в начало сп
 	}
 	this->Size++;
 }
-template<typename T> void List<T>::pop_back() { // удаление последнего элемента bc
+template<typename T> void List<T>::pop_back() { // delete last elem  
 	if (head != NULL) {
 		Node* current = head;
-		while (current->Next != tail)//то есть ищем предпоследний
+		while (current->Next != tail)//search last
 			current = current->Next;
 		delete tail;
 		tail = current;
@@ -61,7 +61,7 @@ template<typename T> void List<T>::pop_back() { // удаление последнего элемента 
 	}
 	else throw std::out_of_range("out_of_range");
 }
-template<typename T> void List<T>::pop_front() { // удаление первого элемента bc-+
+template<typename T> void List<T>::pop_front() { // delete first elem 
 	if (head != NULL) {
 		Node* current = head;
 		head = head->Next;
@@ -70,7 +70,8 @@ template<typename T> void List<T>::pop_front() { // удаление первого элемента bc
 	}
 	else throw std::out_of_range("out_of_range");
 }
-template<typename T> void List<T>::insert(T obj, size_t k) {// добавление элемента по индексу (вставка перед элементом, который был ранее доступен по этому индексу) bc
+template<typename T> void List<T>::insert(T obj, size_t k) {
+	// add elem by index, insert before elem with this index
 	if (k >= 0 && this->Size > k) {
 		if (this->head != NULL) {
 			if (k == 0)
@@ -80,13 +81,13 @@ template<typename T> void List<T>::insert(T obj, size_t k) {// добавление элемен
 					this->push_back(obj);
 				else
 				{
-					Node* current = new Node;//для добавления элемента
-					Node* current1 = head;//для поиска итого элемента
+					Node* current = new Node;//for add elem
+					Node* current1 = head;//for search result elem
 					for (int i = 0; i < k - 1; i++) {
 						current1 = current1->Next;
 					}
-					current->data = obj;
-					current->Next = current1->Next;//переуказывает на след элемент
+					current->data = obj;    
+					current->Next = current1->Next;//change next elem 
 					current1->Next = current;
 					Size++;
 				}
@@ -96,7 +97,7 @@ template<typename T> void List<T>::insert(T obj, size_t k) {// добавление элемен
 		throw std::out_of_range("out_of_range");
 	}
 }
-template<typename T> T List<T>::at(size_t k) {// получение элемента по индексу bc
+template<typename T> T List<T>::at(size_t k) {//get elem by index
 	if (this->head != NULL && k >= 0 && k <= this->Size - 1) {
 		if (k == 0)
 			return this->head->data;
@@ -117,7 +118,7 @@ template<typename T> T List<T>::at(size_t k) {// получение элемента по индексу b
 	}
 }
 
-template<typename T> int List<T>::atCount(size_t k) {// получение элемента по индексу bc
+template<typename T> int List<T>::atCount(size_t k) {//get elem by index
 	if (this->head != NULL && k >= 0 && k <= this->Size - 1) {
 		if (k == 0)
 			return this->head->count;
@@ -145,7 +146,7 @@ template<typename T> void List<T>::swap(size_t index_one, size_t index_two)
 	this->set_with_count(index_one, this->at(index_two), this->atCount(index_two));
 	this->set_with_count(index_two, temp_info, temp_count);
 }
-template<typename T> void List<T>::remove(int k) { // удаление элемента по индексу bc
+template<typename T> void List<T>::remove(int k) { // delete by index
 	if (head != NULL && k >= 0 && k <= Size - 1) {
 		if (k == 0) this->pop_front();
 		else
@@ -153,7 +154,7 @@ template<typename T> void List<T>::remove(int k) { // удаление элемента по индек
 			else
 				if (k != 0) {
 					Node* current = head;
-					for (int i = 0; i < k - 1; i++) {//переходим на предэлемент
+					for (int i = 0; i < k - 1; i++) {//go to before elem
 						current = current->Next;
 					}
 
@@ -167,10 +168,10 @@ template<typename T> void List<T>::remove(int k) { // удаление элемента по индек
 		throw std::out_of_range("out_of_range");
 	}
 }
-template<typename T> size_t List<T>::get_size() { // получение размера списка bc
+template<typename T> size_t List<T>::get_size() { // get list size
 	return Size;
 }
-template<typename T> void List<T>::print_to_console() { // вывод элементов списка в консоль через разделитель, не использовать at bc
+template<typename T> void List<T>::print_to_console() { //print elems to console without delimetr
 	if (this->head != NULL) {
 		Node* current = head;
 		for (int i = 0; i < Size; i++) {
@@ -180,7 +181,7 @@ template<typename T> void List<T>::print_to_console() { // вывод элементов списк
 	}
 }
 
-template<typename T> void List<T>::print_to_console_with_code() { // вывод элементов списка в консоль через разделитель, не использовать at bc
+template<typename T> void List<T>::print_to_console_with_code() {//print elems to console with delimetr
 	if (this->head != NULL) {
 		Node* current = head;
 		cout << endl;
@@ -192,7 +193,7 @@ template<typename T> void List<T>::print_to_console_with_code() { // вывод элеме
 		}
 	}
 }
-template<typename T> void List<T>::clear() { // удаление всех элементов списка
+template<typename T> void List<T>::clear() { // clear list
 	if (head != NULL) {
 		Node* current = head;
 		while (head != NULL) {
@@ -203,8 +204,7 @@ template<typename T> void List<T>::clear() { // удаление всех элементов списка
 		Size = 0;
 	}
 }
-template<typename T> void List<T>::set(size_t k, T obj)  // замена элемента по индексу на передаваемый элемент 
-{
+template<typename T> void List<T>::set(size_t k, T obj) { // change elem at index
 	if (this->head != NULL && this->get_size() >= k && k >= 0) {
 		Node* current = head;
 		for (int i = 0; i < k; i++) {
@@ -217,8 +217,7 @@ template<typename T> void List<T>::set(size_t k, T obj)  // замена элемента по и
 	}
 }
 
-template<typename T> void List<T>::set_with_count(size_t k, T obj, int count)  // замена элемента по индексу на передаваемый элемент 
-{
+template<typename T> void List<T>::set_with_count(size_t k, T obj, int count) {// change elem at index
 	if (this->head != NULL && this->get_size() >= k && k >= 0) {
 		Node* current = head;
 		for (int i = 0; i < k; i++) {
@@ -232,10 +231,10 @@ template<typename T> void List<T>::set_with_count(size_t k, T obj, int count)  /
 	}
 }
 
-template<typename T> bool List<T>::isEmpty() { // проверка на пустоту списка bc
+template<typename T> bool List<T>::isEmpty() { // check empty
 	return (bool)(head);
 }
-template<typename T> void List<T>::reverse() { // меняет порядок элементов в списке
+template<typename T> void List<T>::reverse() { // reverse list
 	int Counter = Size;
 	Node* HeadCur = NULL;
 	Node* TailCur = NULL;
@@ -330,38 +329,37 @@ List<bool>* List<bool>::getCode()
 	return cur->code;
 }
 
-template<typename T> T List<T>::getData()
+template<typename T> T List<T>::getData() //get data of list
 {
 	if (cur != nullptr) return this->cur->data;
 	else return NULL;
 }
 
-template<typename T> void List<T>::qsortRecursive(Node* arr, int size,int left_border) {
+template<typename T> void List<T>::qsortRecursive(Node* arr, int size,int left_border) { //sort list
 	if (arr == nullptr)
 	{
 		return;
 	}
 	this->iterator(arr);
-	//Указатели в начало и в конец массива
+	//indexes of head and back of array
 	int i =  left_border;
 	int j = size - 1;
 
-	//Центральный элемент массива
+	//central elem
 
 	int mid = this->atCount(size/2);
-	//Делим массив
+	//divide array
 	do {
-		//Пробегаем элементы, ищем те, которые нужно перекинуть в другую часть
-		//В левой части массива пропускаем(оставляем на месте) элементы, которые меньше центрального
+		//go through elems, found elems which should be remove to another part
+		//in left part skip elems which less than middle
 		while (this->atCount(i) < mid) {
 			i++;
 		}
-		//В правой части пропускаем элементы, которые больше центрального
+		//in right part skip elems which higher than middle
 		while (this->atCount(j) > mid) {
 			j--;
 		}
-
-		//Меняем элементы местами
+		//swap elems 
 		if (i <= j) {
 			swap(i, j);
 			i++;
@@ -370,13 +368,11 @@ template<typename T> void List<T>::qsortRecursive(Node* arr, int size,int left_b
 	} while (i <= j);
 
 
-	//Рекурсивные вызовы, если осталось, что сортировать
+	//reqursive
 	if (j > 0) {
-		//"Левый кусок"
 		qsortRecursive(arr, j + 1,left_border);
 	}
 	if (i < size) {
-		//"Првый кусок"
 		qsortRecursive(arr, size - i,left_border);
 	}
 }

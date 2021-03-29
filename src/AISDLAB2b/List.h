@@ -31,23 +31,23 @@ public:
 	void iterator(Node* curent);//create iterator
 	bool HasNext();//we check have next element
 	void push_with_count(T obj, int count);//adding in the end with count
-	void push_back(T obj); // добавление в конец списка bc
-	void push_front(T obj); // добавление в начало списка bc
-	void pop_back(); // удаление последнего элемента bc
-	void pop_front(); // удаление первого элемента bc-+
-	void insert(T obj, size_t k); // добавление элемента по индексу (вставка перед элементом, который был ранее доступен по этому индексу) bc
-	T at(size_t k); // получение элемента по индексу bc
-	int atCount(size_t k);//geting count of element
+	void push_back(T obj); // add elem to back
+	void push_front(T obj); // add elem to front
+	void pop_back(); // del elem from back
+	void pop_front(); // del elem from head
+	void insert(T obj, size_t k); // add elem by index, insert before elem with this index
+	T at(size_t k); // get elem by index
+	int atCount(size_t k); // geting count of element
 	void swap(size_t index_one, size_t index_two);//swap of 2 elements
-	void remove(int k); // удаление элемента по индексу bc
-	size_t get_size(); // получение размера списка bc
-	void print_to_console(); // вывод элементов списка в консоль через разделитель, не использовать at bc
+	void remove(int k); // delete elem by index
+	size_t get_size(); // get size
+	void print_to_console(); // output list
 	void print_to_console_with_code();
-	void clear();  // удаление всех элементов списка
-	void set(size_t k, T obj);  // замена элемента по индексу на передаваемый элемент 
+	void clear();  // clear list
+	void set(size_t k, T obj);  // замена элемента по индексу на передаваемый элемент //change elem at index
 	void set_with_count(size_t k, T obj, int count);
-	bool isEmpty(); // проверка на пустоту списка bc
-	void reverse();  // меняет порядок элементов в списке
+	bool isEmpty(); // has list any elements
+	void reverse();  // reverse list
 	List(Node* head = NULL, Node* tail = NULL, int Size = 0) :head(head), tail(tail), Size(Size) {}
 	~List() {
 		if (head != NULL) {
